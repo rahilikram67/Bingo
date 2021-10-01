@@ -1,0 +1,70 @@
+.img-wrapper {
+    height: 200px;
+    width: 90%;
+    display: flex;
+    margin-top: 10px;
+    overflow-x: scroll;
+    overflow-y: hidden;
+    background-color: #888;
+    border-top: 1px solid gray;
+    border-right: 1px solid gray;
+    border-left: 1px solid gray;
+}
+
+.inner-img {
+    height: 100%;
+    background-size: 100% 100%;
+    background-color: white !important;
+    color: white !important;
+}
+
+img {
+    border: 1px solid #ccc;
+}
+
+.img-wrapper::-webkit-scrollbar {
+    height: 4px;
+}
+
+/* Track */
+.img-wrapper::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+/* Handle */
+.img-wrapper::-webkit-scrollbar-thumb {
+    background: #888;
+}
+
+.set-btn {
+    right: 0;
+    margin-left: 95%;
+    margin-top: -14%;
+}
+
+.comb {
+    display: block;
+    width: auto !important;
+    display: grid;
+    place-items: center;
+}
+
+.comb .img-wrapper {
+    background-color: white;
+    border: none !important;
+    height: 150px;
+}
+
+.comb .img-wrapper img {
+    border: 1px solid #ccc;
+}
+
+.comb .img-wrapper::-webkit-scrollbar {
+    display: none;
+}
+
+.delete {
+    margin-top: -15.5% !important;
+    margin-left: 55%;
+    margin-right: auto;
+}

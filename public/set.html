@@ -1,0 +1,37 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script type="module" src="./script.js"></script>
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="img-wrapper" id="sample" v-scope="{images:Array.from(Array(21).keys())}">
+            <img v-for="i of images" class="inner-img" v-effect="$el.src=`assets1/${i}.png`" @click="clicked($el)">
+        </div>
+        <button v-scope class="btn set-btn btn-success px-4" @click="set()">Set <span
+                v-if="temp.length">{{temp.length}}</span></button>
+        <button v-scope v-if="show" @click="getData()" id="combinations"
+            class="btn btn-success py-2 px-5 d-block mx-auto mt-5">Get
+            combinations</button>
+
+        <div v-scope v-if="dender.length>0">
+            <div class="mx-auto comb mt-5" v-for="(i,index) in dender">
+                <div class="img-wrapper my-auto mx-auto">
+                    <img v-for="j of i" class="inner-img" v-effect="$el.src=`assets1/${j}.png`">
+                </div>
+                <button v-scope class="btn w-auto h-auto btn-danger delete" @click="del(index)">Delete</button>
+            </div>
+        </div>
+        <button v-scope @click="send()" class="btn btn-success py-2 px-5 d-block mx-auto mt-5">Send</button>
+    </div>
+</body>
+
+</html>
